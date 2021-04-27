@@ -45,7 +45,7 @@ func (s3 *S3) Provision(context caddy.Context) error {
 	// S3 Client
 	client, _ := minio.New(s3.Host, &minio.Options{
 		Creds:  credentials.NewStaticV4(s3.AccessKey, s3.SecretKey, ""),
-		Secure: true,
+		Secure: false,
 	})
 
 	s3.Client = client
